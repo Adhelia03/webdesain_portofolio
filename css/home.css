@@ -1,0 +1,577 @@
+:root {
+  --primary: #8b0000;        /* Deep red (kept original) */
+  --secondary: #fff9f9;      /* Very light pinkish white */
+  --accent: #ffd700;         /* Gold (kept original) */
+  --text: #333333;           /* Dark gray (kept original) */
+  --light-text: #666666;     /* Medium gray */
+  --footer-bg: #6a0000;      /* Slightly lighter than primary for footer */
+  --hero-bg: #8b0000;        /* Matching primary for hero */
+  --submenu-bg: #7a0000;     /* Dark red for dropdowns */
+  --hover-accent: #ffcc00;   /* Brighter gold for hover states */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--secondary);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Header - Enhanced Colors */
+header {
+  background-color: var(--primary);
+  color: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  animation: slideInLeft 0.8s ease-out;
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+nav {
+  animation: slideInRight 0.8s ease-out;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 25px;
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a:hover {
+  color: var(--hover-accent);
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--hover-accent);
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+
+/* Dropdown Menu - Enhanced Colors */
+.dropdown .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--submenu-bg);
+  min-width: 200px;
+  padding: 10px 0;
+  border-radius: 5px;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown:hover .submenu {
+  display: block;
+}
+
+.submenu li {
+  margin: 0;
+  padding: 8px 20px;
+  transition: background-color 0.2s;
+}
+
+.submenu li:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.submenu li a {
+  white-space: nowrap;
+  color: #fff;
+}
+
+.submenu li a:hover {
+  color: var(--hover-accent);
+}
+
+/* Hero Section - Enhanced Colors */
+.hero {
+  display: flex;
+  min-height: 100vh;
+  padding: 150px 50px 50px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: var(--hero-bg);
+  background-image: linear-gradient(135deg, var(--primary) 0%, #6a0000 100%);
+  color: white;
+  text-align: center;
+}
+
+.name-animation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.name-text-image {
+  max-width: 80%;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.hero-content {
+  flex: 1;
+  position: relative;
+  padding-left: 50px;
+}
+
+.content-wrapper {
+  max-width: 500px;
+}
+
+.hero-content h1 {
+  font-size: 72px;
+  margin-bottom: 20px;
+  color: #fff;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-info strong {
+  color: var(--accent);
+}
+/* Footer - Enhanced */
+footer {
+  background-color: var(--footer-bg);
+  color: white;
+  padding: 40px 0 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.footer-logo span {
+  color: var(--accent);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px 10px;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.social-links {
+  margin: 20px 0;
+}
+
+.social-links a {
+  color: white;
+  font-size: 20px;
+  margin: 0 12px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-links a:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+  background-color: rgba(255, 215, 0, 0.2);
+}
+
+.copyright {
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+/* Mobile menu styles */
+/* Add these to your existing CSS */
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+    #main-nav {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: calc(100vh - 70px);
+        background-color: var(--primary);
+        padding: 20px;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        transition: right 0.3s ease-out;
+        overflow-y: auto;
+    }
+
+    #main-nav.active {
+        right: 0;
+    }
+
+    .main-menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-menu li {
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    .main-menu li a {
+        padding: 8px 0;
+        display: block;
+        width: 100%;
+    }
+
+    .dropdown .submenu {
+        position: static;
+        box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.1);
+        display: none;
+        padding-left: 15px;
+        margin-top: 10px;
+        width: 100%;
+        animation: none;
+    }
+
+    .dropdown .submenu li {
+        padding: 8px 0;
+    }
+
+    .dropdown.active .submenu {
+        display: block;
+    }
+
+    .dropdown-toggle i {
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown.active .dropdown-toggle i {
+        transform: rotate(180deg);
+    }
+}
+
+/* Desktop dropdown improvements */
+@media (min-width: 769px) {
+    .dropdown .submenu {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        transform: translateY(10px);
+    }
+
+    .dropdown:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .dropdown-toggle i {
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown:hover .dropdown-toggle i {
+        transform: rotate(180deg);
+    }
+}
+
+
+/* Animation Keyframes */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-image,
+  .about-text {
+    flex: none;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .about-image {
+    order: -1;
+  }
+
+  nav ul li {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 15px;
+  }
+
+  .menu-toggle {
+    display: block;
+    animation: fadeIn 1s ease-out;
+  }
+
+  nav {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: calc(100vh - 70px);
+    background-color: var(--primary);
+    padding: 20px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-out;
+    overflow-y: auto;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul li {
+    margin: 15px 0;
+    width: 100%;
+  }
+
+  nav ul li a {
+    padding: 8px 0;
+    display: block;
+    width: 100%;
+  }
+
+  .dropdown .submenu {
+    position: static;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: none;
+    padding-left: 15px;
+    margin-top: 10px;
+    width: 100%;
+    animation: none;
+  }
+
+  .dropdown .submenu li {
+    padding: 8px 0;
+  }
+
+  .dropdown.active .submenu {
+    display: block;
+  }
+
+  .hero {
+    padding: 130px 0 60px;
+  }
+
+  .date-section {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  .hero {
+    padding: 120px 0 50px;
+  }
+
+  .about {
+    padding: 40px 0;
+  }
+
+  .section-title h2::after {
+    width: 40px;
+    bottom: -8px;
+  }
+
+  .date-section {
+    margin: 20px 0;
+  }
+
+  .footer-links a {
+    margin: 0 10px 10px;
+    font-size: 14px;
+  }
+
+  .social-links a {
+    margin: 0 8px;
+    font-size: 18px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+  }
+}
